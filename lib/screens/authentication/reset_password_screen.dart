@@ -118,7 +118,6 @@ class PasswordResetScreen extends StatelessWidget {
               //_validateEmail();
               if(_formKey.currentState!.validate()){
                 FirebaseAuth.instance.sendPasswordResetEmail(email: emailController.text).then((value){
-                  print("OOooooooooooooooooo" + emailController.text);
                   Navigator.pushReplacementNamed(context, EmailAuthScreen.id);
                 });
               }

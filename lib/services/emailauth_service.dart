@@ -66,7 +66,7 @@ class EmailAuthentication {
           password: password,
       );
       if(userCredential.user!.uid != null){
-        return users.doc(userCredential.user!.email).set({
+        return users.doc(userCredential.user!.uid).set({
           'uid' : userCredential.user!.uid,
           'email' : userCredential.user!.email,
           'mobile' : null,

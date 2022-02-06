@@ -46,7 +46,7 @@ dependencies:
   flutter_facebook_login:
   email_validator:
   open_mail_app:
-
+  csc_picker:
 
 
 dev_dependencies:
@@ -60,6 +60,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
   flutter_launcher_icons:
+
 
 flutter_icons:
   android: true

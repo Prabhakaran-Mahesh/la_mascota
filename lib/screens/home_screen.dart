@@ -2,7 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
+import 'package:la_mascota/screens/location_screen.dart';
 import 'package:la_mascota/screens/login_screen.dart';
+import 'package:la_mascota/widgets/custom_appBar.dart';
 import 'package:location/location.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,40 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1.0,
-        title: InkWell(
-          onTap: (){},
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Row(
-                children: [
-                  const Icon(CupertinoIcons.location_solid, color: Colors.red,),
-                  const SizedBox(
-                    width: 5.0,
-                  ),
-                  Flexible(
-                    child: Text(
-                      address,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const Icon(
-                        Icons.keyboard_arrow_down_outlined,
-                      color: Colors.grey,
-                    ),
-                ],
-              ),
-            ),
-          ),
-        ),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(56),
+          child: CustomAppbar(),
       ),
       body: Center(
         child:  ElevatedButton(
