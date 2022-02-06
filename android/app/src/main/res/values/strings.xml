@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">la Mascota</string>
+    <string name="facebook_app_id">956940821859208</string>
+    <string name="fb_login_protocol_scheme">fb1365719610250300</string>
+    <string name="facebook_client_token">3c76faf957026ab902ba20ae59e84f1c</string>
+</resources>

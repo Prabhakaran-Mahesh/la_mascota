@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "318689420720",
+    "project_id": "la-mascota-39969",
+    "storage_bucket": "la-mascota-39969.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318689420720:android:7157b96fb82b8535f4a275",
+        "android_client_info": {
+          "package_name": "com.jookate.la_mascota"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318689420720-j9ukga585m9tio481lfqskjs390n17r5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jookate.la_mascota",
+            "certificate_hash": "56b9e07efda361b647e1f33da9589ab44d19e545"
+          }
+        },
+        {
+          "client_id": "318689420720-2b5tr0eignmi02oj8a9drv2s0l5g1ehl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe0-94XB5EThos8L7PhBR6VJOdQnjCTyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318689420720-2b5tr0eignmi02oj8a9drv2s0l5g1ehl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
