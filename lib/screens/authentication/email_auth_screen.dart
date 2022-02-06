@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mascota/screens/authentication/reset_password_screen.dart';
 import 'package:la_mascota/services/emailauth_service.dart';
 
 class EmailAuthScreen extends StatefulWidget {
@@ -34,6 +35,7 @@ class _EmailAuthScreenState extends State<EmailAuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1.0,
@@ -135,16 +137,18 @@ class _EmailAuthScreenState extends State<EmailAuthScreen> {
                   }
                 },
               ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              const Align(
+              Align(
                 alignment: Alignment.centerRight,
-                  child: Text(
-                      'Forgot Password?',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                  child: TextButton(
+                    onPressed: (){
+                      Navigator.pushReplacementNamed(context, PasswordResetScreen.id);
+                    },
+                    child: const Text(
+                        'Forgot Password?',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue,
+                      ),
                     ),
                   ),
               ),
