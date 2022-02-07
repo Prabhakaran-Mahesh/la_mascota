@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:la_mascota/screens/location_screen.dart';
 import 'package:la_mascota/screens/login_screen.dart';
+import 'package:la_mascota/widgets/banner_widget.dart';
 import 'package:la_mascota/widgets/custom_appBar.dart';
 import 'package:location/location.dart';
 
@@ -42,21 +43,67 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(56),
-          child: CustomAppbar(),
+          child: SafeArea(child: CustomAppbar()),
       ),
-      body: Center(
-        child:  ElevatedButton(
-          onPressed: (){
-            FirebaseAuth.instance.signOut()
-            .then((value) => {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const LoginScreen()), (route) => false)
-            });
-          },
-          child: const Text(
-            'Sign Out',
+      body: Column(
+        children: [
+          Container(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(
+                  12.0,
+                15.0,
+                12.0,
+                0.0
+            ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 40.0,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(
+                            Icons.search,
+                          ),
+                          labelText: 'Find Cats, Dogs, and many More..!',
+                          labelStyle: const TextStyle(
+                            fontSize: 12.0,
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 10.0,),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                  const Icon(
+                    Icons.notifications_none,
+                  ),
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12.0,
+              vertical: 10.0
+            ),
+            child: Column(
+              children: [
+                BannerWidget(),
+              ],
+            ),
+          ),
+        ],
+      )
     );
   }
 }

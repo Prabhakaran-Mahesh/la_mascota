@@ -47,6 +47,8 @@ dependencies:
   email_validator:
   open_mail_app:
   csc_picker:
+  flutter_neumorphic:
+  animated_text_kit:
 
 
 dev_dependencies:

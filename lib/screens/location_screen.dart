@@ -81,7 +81,7 @@ class _LocationScreenState extends State<LocationScreen> {
       if (document.exists) {
         if(document['address'] != "" || document['address'] != null){
           setState(() {
-            loading = true;
+            loading = false;
           });
           Navigator.pushAndRemoveUntil(
               context,
@@ -90,7 +90,7 @@ class _LocationScreenState extends State<LocationScreen> {
           );
         }else{
           setState(() {
-            loading = false;
+            loading = true;
           });
         }
       }
@@ -376,14 +376,14 @@ class _LocationScreenState extends State<LocationScreen> {
           const SizedBox(
             height: 30.0,
           ),
-          loading ? CircularProgressIndicator() :Column(
+          !loading ? const CircularProgressIndicator() :Column(
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 10.0),
                 child: Row(
                   children: [
                     Expanded(
-                      child: loading?
+                      child: !loading?
                       Center(child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.cyan.shade200),
                       ))
