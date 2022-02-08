@@ -8,8 +8,12 @@ import 'package:la_mascota/screens/authentication/phoneauth_screen.dart';
 import 'package:la_mascota/screens/authentication/reset_password_screen.dart';
 import 'package:la_mascota/screens/categories/category_list.dart';
 import 'package:la_mascota/screens/categories/subCat_screen.dart';
+import 'package:la_mascota/screens/chat_screen.dart';
 import 'package:la_mascota/screens/location_screen.dart';
 import 'package:la_mascota/screens/login_screen.dart';
+import 'package:la_mascota/screens/myAd_screen.dart';
+import 'package:la_mascota/screens/sellItems/seller_category_list.dart';
+import 'package:la_mascota/screens/sellItems/seller_subCat_screen.dart';
 import 'package:la_mascota/screens/splash_screen.dart';
 
 void main() async{
@@ -40,6 +44,10 @@ class MyApp extends StatelessWidget {
         PasswordResetScreen.id: (context) => const PasswordResetScreen(),
         CategoryListScreen.id: (context) => const CategoryListScreen(),
         SubCatList.id: (context) => const SubCatList(),
+        SellerCategoryListScreen.id: (context) => const SellerCategoryListScreen(),
+        SellerSubCatList.id: (context) => const SellerSubCatList(),
+        ChatScreen.id: (context) => const ChatScreen(),
+        MyAdsScreen.id: (context) => const MyAdsScreen(),
       },
     );
   }

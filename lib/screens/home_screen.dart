@@ -12,8 +12,8 @@ import 'package:location/location.dart';
 class HomeScreen extends StatefulWidget {
 
   static const String id = 'HomeScreen';
-  final LocationData? locationData;
-  const HomeScreen({Key? key, required this.locationData}) : super(key: key);
+  //final LocationData? locationData;
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -21,7 +21,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String address = 'India';
-  Future<void> getAddress() async{
+  /*Future<void> getAddress() async{
     final coordinates = Coordinates(widget.locationData!.latitude!, widget.locationData!.longitude! );
     var addresses = await Geocoder.local.findAddressesFromCoordinates(coordinates);
     var first = addresses.first;
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     getAddress();
     super.initState();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {

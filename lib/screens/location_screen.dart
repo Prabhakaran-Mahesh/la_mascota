@@ -8,10 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:geocoder/model.dart';
 import 'package:la_mascota/screens/login_screen.dart';
+import 'package:la_mascota/screens/main_screen.dart';
 import 'package:la_mascota/services/firebase_Services.dart';
 import 'package:location/location.dart';
 
-import 'home_screen.dart';
 
 class LocationScreen extends StatefulWidget {
   const LocationScreen({Key? key,this.locationChanging=false}) : super(key: key);
@@ -87,7 +87,7 @@ class _LocationScreenState extends State<LocationScreen> {
             });
             Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => HomeScreen(locationData: _locationData,)),
+                MaterialPageRoute(builder: (context) => MainScreen()),
                     (route) => false
             );
           }else{
@@ -186,7 +186,7 @@ class _LocationScreenState extends State<LocationScreen> {
                         ).then((value){
                           Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(builder: (context) => HomeScreen(locationData: _locationData,)),
+                              MaterialPageRoute(builder: (context) => MainScreen()),
                                   (route) => false
                           );
                         });
@@ -313,7 +313,7 @@ class _LocationScreenState extends State<LocationScreen> {
                              ).then((value) {
                                Navigator.pushAndRemoveUntil(
                                    context,
-                                   MaterialPageRoute(builder: (context) => HomeScreen(locationData: _locationData,)),
+                                   MaterialPageRoute(builder: (context) => MainScreen()),
                                        (route) => false
                                );
                              });
@@ -415,7 +415,7 @@ class _LocationScreenState extends State<LocationScreen> {
                                 ).then((value) {
                                   Navigator.pushAndRemoveUntil(
                                       context,
-                                      MaterialPageRoute(builder: (context) => HomeScreen(locationData: _locationData,)),
+                                      MaterialPageRoute(builder: (context) => MainScreen()),
                                           (route) => false
                                   );
                                 });
