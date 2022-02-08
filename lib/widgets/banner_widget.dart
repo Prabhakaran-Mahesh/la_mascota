@@ -60,12 +60,13 @@ class BannerWidget extends StatelessWidget {
                       Neumorphic(
                         style: const NeumorphicStyle(
                           color: Colors.white,
-
+                          oppositeShadowLightSource: true,
                         ),
-                        child: Image.network(
-                          'https://firebasestorage.googleapis.com/v0/b/la-mascota-39969.appspot.com/o/banner%2Ficons8-maneki.gif?alt=media&token=aac90b21-4070-48b8-859e-ff2a05181ffd',
-                          fit: BoxFit.fill,
-                          width: MediaQuery.of(context).size.width * 0.26,
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Image.network(
+                            'https://firebasestorage.googleapis.com/v0/b/la-mascota-39969.appspot.com/o/banner%2Frabbit.gif?alt=media&token=db8660eb-5d0d-4b45-9849-0498454f9033'
+                          ),
                         ),
                       ),
                     ],

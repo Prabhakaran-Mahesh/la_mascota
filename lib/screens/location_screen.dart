@@ -14,8 +14,9 @@ import 'package:location/location.dart';
 import 'home_screen.dart';
 
 class LocationScreen extends StatefulWidget {
-  const LocationScreen({Key? key}) : super(key: key);
+  const LocationScreen({Key? key,this.locationChanging=false}) : super(key: key);
   static const String id = 'LocationScreenId';
+  final bool locationChanging;
 
   @override
   State<LocationScreen> createState() => _LocationScreenState();
@@ -74,27 +75,33 @@ class _LocationScreenState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
 
-    _firebaseService.users
-        .doc(_firebaseService.user!.uid)
-        .get()
-        .then((DocumentSnapshot document) {
-      if (document.exists) {
-        if(document['address'] != "" || document['address'] != null){
-          setState(() {
-            loading = false;
-          });
-          Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen(locationData: _locationData,)),
-                  (route) => false
-          );
-        }else{
-          setState(() {
-            loading = true;
-          });
+    if(widget.locationChanging==false){
+      _firebaseService.users
+          .doc(_firebaseService.user!.uid)
+          .get()
+          .then((DocumentSnapshot document) {
+        if (document.exists) {
+          if(document['address'] != "" || document['address'] != null){
+            setState(() {
+              loading = false;
+            });
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen(locationData: _locationData,)),
+                    (route) => false
+            );
+          }else{
+            setState(() {
+              loading = true;
+            });
+          }
         }
-      }
-    });
+      });
+    }
+    else{
+      loading = true;
+    }
+
 
     showBottomScreen(context){
       getLocation().then((location){

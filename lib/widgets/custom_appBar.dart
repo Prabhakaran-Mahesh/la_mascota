@@ -54,7 +54,7 @@ class CustomAppbar extends StatelessWidget {
       elevation: 1.0,
       title: InkWell(
         onTap: (){
-          Navigator.pushNamed(context, LocationScreen.id);
+          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LocationScreen(locationChanging: true,)));
         },
         child: SizedBox(
           width: MediaQuery.of(context).size.width,

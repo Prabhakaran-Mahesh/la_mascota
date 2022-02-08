@@ -5,6 +5,7 @@ import 'package:geocoder/geocoder.dart';
 import 'package:la_mascota/screens/location_screen.dart';
 import 'package:la_mascota/screens/login_screen.dart';
 import 'package:la_mascota/widgets/banner_widget.dart';
+import 'package:la_mascota/widgets/category_widget.dart';
 import 'package:la_mascota/widgets/custom_appBar.dart';
 import 'package:location/location.dart';
 
@@ -97,8 +98,9 @@ class _HomeScreenState extends State<HomeScreen> {
               vertical: 10.0
             ),
             child: Column(
-              children: [
+              children: const [
                 BannerWidget(),
+                CategoryWidget(),
               ],
             ),
           ),

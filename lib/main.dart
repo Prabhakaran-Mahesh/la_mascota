@@ -6,6 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:la_mascota/screens/authentication/email_auth_screen.dart';
 import 'package:la_mascota/screens/authentication/phoneauth_screen.dart';
 import 'package:la_mascota/screens/authentication/reset_password_screen.dart';
+import 'package:la_mascota/screens/categories/category_list.dart';
+import 'package:la_mascota/screens/categories/subCat_screen.dart';
 import 'package:la_mascota/screens/location_screen.dart';
 import 'package:la_mascota/screens/login_screen.dart';
 import 'package:la_mascota/screens/splash_screen.dart';
@@ -36,6 +38,8 @@ class MyApp extends StatelessWidget {
         LocationScreen.id: (context) => const LocationScreen(),
         EmailAuthScreen.id: (context) => const EmailAuthScreen(),
         PasswordResetScreen.id: (context) => const PasswordResetScreen(),
+        CategoryListScreen.id: (context) => const CategoryListScreen(),
+        SubCatList.id: (context) => const SubCatList(),
       },
     );
   }
