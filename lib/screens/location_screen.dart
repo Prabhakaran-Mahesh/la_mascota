@@ -108,8 +108,8 @@ class _LocationScreenState extends State<LocationScreen> {
         if(location!=null){
           showModalBottomSheet(
             backgroundColor: Colors.white,
-            //isScrollControlled: true,
-            //enableDrag: true,
+            isScrollControlled: true,
+            enableDrag: true,
             context: context,
             builder: (context){
               return Column(
@@ -400,7 +400,7 @@ class _LocationScreenState extends State<LocationScreen> {
                           ),
                           onPressed: (){
                             setState(() {
-                              loading = true;
+                              loading = false;
                             });
                             getLocation().then((value){
                               if(value!=null){

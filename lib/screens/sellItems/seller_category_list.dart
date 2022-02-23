@@ -1,8 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:la_mascota/provider/cat_provider.dart';
 import 'package:la_mascota/screens/categories/subCat_screen.dart';
 import 'package:la_mascota/screens/sellItems/seller_subCat_screen.dart';
 import 'package:la_mascota/services/firebase_Services.dart';
+import 'package:la_mascota/widgets/forms/seller_dog_form.dart';
+import 'package:provider/provider.dart';
 
 class SellerCategoryListScreen extends StatelessWidget {
   const SellerCategoryListScreen({Key? key}) : super(key: key);
@@ -12,6 +15,8 @@ class SellerCategoryListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirebaseService _service = FirebaseService();
+
+    var _catProvider = Provider.of<CategoryProvider>(context);
 
     return Scaffold(
       //backgroundColor: Colors.black,
@@ -58,10 +63,16 @@ class SellerCategoryListScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
                       onTap: (){
+                        _catProvider.getCategory(doc['catName']);
+                        _catProvider.getCatSnapshot(doc);
                         if(doc['subCat'] == null){
-                          return print('');
+                          Navigator.pushNamed
+                            (context, SellerHamsterForm.id);
                         }
-                        Navigator.pushNamed(context, SellerSubCatList.id, arguments: doc);
+                        else {
+                          Navigator.pushNamed(
+                              context, SellerSubCatList.id, arguments: doc);
+                        }
                       },
                       leading: Image.network(
                           doc['image'],

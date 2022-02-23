@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:la_mascota/provider/cat_provider.dart';
 import 'package:la_mascota/screens/authentication/email_auth_screen.dart';
 import 'package:la_mascota/screens/authentication/phoneauth_screen.dart';
 import 'package:la_mascota/screens/authentication/reset_password_screen.dart';
@@ -15,11 +16,21 @@ import 'package:la_mascota/screens/myAd_screen.dart';
 import 'package:la_mascota/screens/sellItems/seller_category_list.dart';
 import 'package:la_mascota/screens/sellItems/seller_subCat_screen.dart';
 import 'package:la_mascota/screens/splash_screen.dart';
+import 'package:la_mascota/widgets/forms/seller_dog_form.dart';
+import 'package:provider/provider.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  Provider.debugCheckInvalidValueType = null;
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider(create: (_) => CategoryProvider())
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -48,6 +59,7 @@ class MyApp extends StatelessWidget {
         SellerSubCatList.id: (context) => const SellerSubCatList(),
         ChatScreen.id: (context) => const ChatScreen(),
         MyAdsScreen.id: (context) => const MyAdsScreen(),
+        SellerHamsterForm.id: (context) => SellerHamsterForm(),
       },
     );
   }

@@ -49,6 +49,7 @@ dependencies:
   csc_picker:
   flutter_neumorphic:
   animated_text_kit:
+  provider:
 
 
 dev_dependencies:

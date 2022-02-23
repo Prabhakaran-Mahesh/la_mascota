@@ -32,4 +32,9 @@ class FirebaseService {
 
     return first.addressLine;
   }
+
+  Future<DocumentSnapshot>getUserData()async{
+    DocumentSnapshot doc = await users.doc(user!.uid).get();
+    return doc;
+  }
 }

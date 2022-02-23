@@ -18,58 +18,60 @@ class BannerWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            height: 1.0,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 1.0,
+                            ),
+                    DefaultTextStyle(
+                      style: GoogleFonts.arvo(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.teal.shade900,
+                      ),
+                      child: AnimatedTextKit(
+                        repeatForever: true,
+                        isRepeatingAnimation: true,
+                        animatedTexts: [
+                          FadeAnimatedText(
+                              'Reach 1 Million+\nCat Lovers',
+                            duration: const Duration(seconds: 4),
                           ),
-                  DefaultTextStyle(
-                    style: GoogleFonts.arvo(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.teal.shade900,
-                    ),
-                    child: AnimatedTextKit(
-                      repeatForever: true,
-                      isRepeatingAnimation: true,
-                      animatedTexts: [
-                        FadeAnimatedText(
-                            'Reach 1 Million+\nCat Lovers',
-                          duration: const Duration(seconds: 4),
+                          FadeAnimatedText(
+                              'New way to\nBuy or Sell Cats',
+                            duration: const Duration(seconds: 4),
+                          ),
+                          FadeAnimatedText(
+                              'Over 10k+\nCats to Buy!!!',
+                            duration: const Duration(seconds: 4),
+                          ),
+                        ],
+                      ),
+                    )
+                          ],
                         ),
-                        FadeAnimatedText(
-                            'New way to\nBuy or Sell Cats',
-                          duration: const Duration(seconds: 4),
-                        ),
-                        FadeAnimatedText(
-                            'Over 10k+\nCats to Buy!!!',
-                          duration: const Duration(seconds: 4),
+                        Neumorphic(
+                          style: const NeumorphicStyle(
+                            color: Colors.white,
+                            oppositeShadowLightSource: true,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Image.network(
+                              'https://firebasestorage.googleapis.com/v0/b/la-mascota-39969.appspot.com/o/banner%2Frabbit.gif?alt=media&token=db8660eb-5d0d-4b45-9849-0498454f9033'
+                            ),
+                          ),
                         ),
                       ],
                     ),
-                  )
-                        ],
-                      ),
-                      Neumorphic(
-                        style: const NeumorphicStyle(
-                          color: Colors.white,
-                          oppositeShadowLightSource: true,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Image.network(
-                            'https://firebasestorage.googleapis.com/v0/b/la-mascota-39969.appspot.com/o/banner%2Frabbit.gif?alt=media&token=db8660eb-5d0d-4b45-9849-0498454f9033'
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ),
                 Row(
